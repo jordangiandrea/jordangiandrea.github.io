@@ -14,32 +14,33 @@
 
   /* =========================================================
      COLOR PALETTE
+     Inspired by white / navy / gum retro sneakers
      ========================================================= */
 
   :root {
-    /* Main surfaces */
-    --paper: #F7F5EE;
-    --white: #FEFDF9;
-    --sidebar: #E9E7DF;
+    /* Surfaces */
+    --paper: #F4F5F3;
+    --white: #FFFFFF;
+    --sidebar: #F0F1EE;
 
-    /* Primary accent — navy leather */
-    --navy: #18324A;
-    --navy-light: #294A67;
+    /* Navy */
+    --navy: #19334D;
+    --navy-light: #294A66;
 
-    /* Secondary accent — gum sole */
-    --gum: #A9683F;
-    --gum-dark: #875032;
+    /* Gum / leather accent */
+    --gum: #A8653B;
+    --gum-dark: #835033;
 
-    /* Small warm detail — gold lettering */
-    --gold: #C89545;
+    /* Small gold accent */
+    --gold: #B8863B;
 
     /* Text */
-    --ink: #1E2428;
-    --text: #3F4548;
-    --muted: #777873;
+    --ink: #17212A;
+    --text: #353C42;
+    --muted: #70777C;
 
     /* Dividers */
-    --rule: #D8D5CC;
+    --rule: #D8DADC;
   }
 
 
@@ -53,41 +54,43 @@
     padding: 0;
   }
 
-    html {
-      scroll-behavior: smooth;
-    }
+  html {
+    scroll-behavior: smooth;
+  }
 
-    body {
+  body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: var(--ink);
     background: var(--paper);
     line-height: 1.65;
-    }
+  }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
-    a:hover {
-      color: var(--gum);
-    }
+  a:hover {
+    color: var(--gum);
+  }
 
-    h1, h2, h3 {
-      line-height: 1.15;
-      font-weight: 600;
-    }
+  h1,
+  h2,
+  h3 {
+    line-height: 1.15;
+    font-weight: 600;
+  }
 
-    p {
-      margin-bottom: 18px;
-    }
+  p {
+    margin-bottom: 18px;
+  }
 
 
-    /* =========================================================
-       SIDEBAR
-       ========================================================= */
+  /* =========================================================
+     SIDEBAR
+     ========================================================= */
 
-    .sidebar {
+  .sidebar {
     position: fixed;
     top: 0;
     left: 0;
@@ -107,626 +110,472 @@
   }
 
 
-    /* ---------- Photo ---------- */
+  /* ---------- Photo ---------- */
 
-    .headshot {
-      width: 155px;
-      height: 155px;
+  .headshot {
+    width: 155px;
+    height: 155px;
 
-      object-fit: cover;
-      object-position: center;
+    object-fit: cover;
+    object-position: center;
 
-      border-radius: 50%;
+    border-radius: 50%;
 
-      margin-bottom: 28px;
+    margin-bottom: 28px;
+  }
+
+
+  /* ---------- Identity ---------- */
+
+  .sidebar-name {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 1.75rem;
+    font-weight: 500;
+
+    color: var(--navy);
+
+    margin-bottom: 6px;
+  }
+
+  .sidebar-title {
+    font-size: 0.93rem;
+    color: var(--muted);
+
+    line-height: 1.45;
+
+    margin-bottom: 35px;
+  }
+
+
+  /* ---------- Navigation ---------- */
+
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    margin-bottom: 35px;
+  }
+
+  .sidebar-nav a {
+    font-size: 0.94rem;
+    color: var(--ink);
+
+    width: fit-content;
+
+    transition: color 0.15s ease;
+  }
+
+  .sidebar-nav a:hover {
+    color: var(--gum);
+  }
+
+
+  /* ---------- Sidebar links ---------- */
+
+  .sidebar-links {
+    display: flex;
+    gap: 16px;
+
+    font-size: 0.86rem;
+
+    margin-top: auto;
+  }
+
+  .sidebar-links a {
+    color: var(--muted);
+  }
+
+  .sidebar-links a:hover {
+    color: var(--gum);
+  }
+
+
+  /* =========================================================
+     MAIN CONTENT
+     ========================================================= */
+
+  main {
+    margin-left: 300px;
+    background: var(--white);
+    min-height: 100vh;
+  }
+
+  .content {
+    width: 88%;
+    max-width: 900px;
+
+    margin: 0 auto;
+  }
+
+  section {
+    padding: 90px 0;
+
+    border-bottom: 1px solid var(--rule);
+  }
+
+
+  /* =========================================================
+     HERO / ABOUT
+     ========================================================= */
+
+  .hero {
+    min-height: 92vh;
+
+    display: flex;
+    align-items: center;
+
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .hero-inner {
+    max-width: 780px;
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+
+    font-size: 0.74rem;
+    letter-spacing: 0.16em;
+
+    color: var(--navy);
+
+    margin-bottom: 22px;
+  }
+
+  .hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(3rem, 6vw, 5.4rem);
+    font-weight: 400;
+
+    letter-spacing: -0.035em;
+
+    margin-bottom: 30px;
+
+    color: var(--navy);
+  }
+
+  .hero-description {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 1.38rem;
+    line-height: 1.55;
+
+    max-width: 720px;
+
+    color: var(--ink);
+
+    margin-bottom: 30px;
+  }
+
+  .hero-detail {
+    max-width: 700px;
+
+    font-size: 1rem;
+
+    color: var(--text);
+  }
+
+  .hero-links {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 22px;
+
+    margin-top: 34px;
+
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
+
+  .hero-links a {
+    color: var(--navy);
+
+    border-bottom: 1px solid var(--navy);
+
+    padding-bottom: 2px;
+
+    transition: color 0.15s ease,
+                border-color 0.15s ease;
+  }
+
+  .hero-links a:hover {
+    color: var(--gum);
+    border-color: var(--gum);
+  }
+
+
+  /* =========================================================
+     SECTION HEADINGS
+     ========================================================= */
+
+  .section-label {
+    font-size: 0.72rem;
+
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    color: var(--navy);
+
+    margin-bottom: 13px;
+  }
+
+  .section-title {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 2.6rem;
+    font-weight: 400;
+
+    color: var(--navy);
+
+    margin-bottom: 45px;
+  }
+
+
+  /* =========================================================
+     RESEARCH
+     ========================================================= */
+
+  .research-item {
+    display: grid;
+
+    grid-template-columns: 70px 1fr;
+
+    gap: 25px;
+
+    padding: 32px 0;
+
+    border-top: 1px solid var(--rule);
+  }
+
+  .research-item:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .research-number {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 1rem;
+
+    color: var(--gum);
+
+    padding-top: 4px;
+  }
+
+  .research-item h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 1.55rem;
+    font-weight: 400;
+
+    margin-bottom: 10px;
+
+    color: var(--ink);
+  }
+
+  .research-meta {
+    font-size: 0.78rem;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
+    color: var(--muted);
+
+    margin-bottom: 14px;
+  }
+
+  .research-item p {
+    max-width: 690px;
+
+    color: var(--text);
+
+    margin-bottom: 0;
+  }
+
+
+  /* =========================================================
+     EXPERIENCE
+     ========================================================= */
+
+  .experience-item {
+    display: grid;
+
+    grid-template-columns: 190px 1fr;
+
+    gap: 35px;
+
+    padding: 27px 0;
+
+    border-top: 1px solid var(--rule);
+  }
+
+  .experience-date {
+    color: var(--gum);
+
+    font-size: 0.86rem;
+  }
+
+  .experience-info h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 1.25rem;
+    font-weight: 400;
+
+    margin-bottom: 5px;
+
+    color: var(--ink);
+  }
+
+  .institution {
+    color: var(--muted);
+
+    font-size: 0.9rem;
+
+    margin-bottom: 10px;
+  }
+
+  .experience-info p {
+    color: var(--text);
+
+    margin-bottom: 0;
+  }
+
+
+  /* =========================================================
+     PUBLICATIONS
+     ========================================================= */
+
+  .publication {
+    padding: 25px 0;
+
+    border-top: 1px solid var(--rule);
+  }
+
+  .publication:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .publication-title {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 1.18rem;
+
+    margin-bottom: 7px;
+
+    color: var(--ink);
+  }
+
+  .publication-details {
+    color: var(--muted);
+
+    font-size: 0.93rem;
+  }
+
+
+  /* =========================================================
+     FOOTER
+     ========================================================= */
+
+  footer {
+    padding: 40px 0 55px;
+
+    color: var(--muted);
+
+    font-size: 0.82rem;
+  }
+
+
+  /* =========================================================
+     MOBILE
+     ========================================================= */
+
+  @media (max-width: 800px) {
+
+    .sidebar {
+      position: relative;
+
+      width: 100%;
+      height: auto;
+
+      padding: 35px 7% 25px;
+
+      border-right: none;
+      border-bottom: 1px solid var(--rule);
     }
 
+    .headshot {
+      width: 110px;
+      height: 110px;
 
-    /* ---------- Identity ---------- */
+      margin-bottom: 20px;
+    }
 
     .sidebar-name {
-      font-family: Georgia, "Times New Roman", serif;
-
-      font-size: 1.75rem;
-      font-weight: 500;
-
-      color: #111;
-
-      margin-bottom: 6px;
+      font-size: 1.5rem;
     }
 
     .sidebar-title {
-      font-size: 0.93rem;
-      color: #666;
-
-      line-height: 1.45;
-
-      margin-bottom: 35px;
+      margin-bottom: 22px;
     }
 
+    .sidebar-nav {
+      flex-direction: row;
+      flex-wrap: wrap;
 
-    /* ---------- Navigation ---------- */
-    
-    .sidebar-nav a {
-      font-size: 0.94rem;
-      color: var(--ink);
-    
-      width: fit-content;
-    
-      transition: color 0.15s ease;
-    }
-    
-    .sidebar-nav a:hover {
-      color: var(--gum);
-    }
-    
-    .sidebar-links a {
-      color: var(--muted);
-    }
-    
-    .sidebar-links a:hover {
-      color: var(--gum);
-    }
+      gap: 10px 20px;
 
-    /* ---------- Sidebar links ---------- */
+      margin-bottom: 22px;
+    }
 
     .sidebar-links {
-      display: flex;
-      gap: 16px;
-
-      font-size: 0.86rem;
-
-      margin-top: auto;
+      margin-top: 0;
     }
 
-    .sidebar-links a {
-      color: #666;
-    }
-
-    .sidebar-links a:hover {
-      color: #7a0019;
-    }
-
-
-    /* =========================================================
-       MAIN CONTENT
-       ========================================================= */
     main {
-      margin-left: 300px;
-      background: var(--white);
-      min-height: 100vh;
+      margin-left: 0;
     }
 
     .content {
-      width: 88%;
-      max-width: 900px;
-
-      margin: 0 auto;
+      width: 86%;
     }
 
     section {
-      padding: 90px 0;
-
-      border-bottom: 1px solid #e7e7e3;
+      padding: 65px 0;
     }
-
-
-    /* =========================================================
-       HERO / ABOUT
-       ========================================================= */
 
     .hero {
-      min-height: 92vh;
+      min-height: auto;
 
-      display: flex;
-      align-items: center;
-
-      padding-top: 80px;
-      padding-bottom: 80px;
-    }
-
-    .hero-inner {
-      max-width: 780px;
-    }
-
-    .eyebrow,
-    .section-label {
-      text-transform: uppercase;
-    
-      font-size: 0.74rem;
-      letter-spacing: 0.16em;
-    
-      color: var(--gold);
+      padding-top: 70px;
+      padding-bottom: 70px;
     }
 
     .hero h1 {
-      font-family: Georgia, "Times New Roman", serif;
-
-      font-size: clamp(3rem, 6vw, 5.4rem);
-      font-weight: 400;
-
-      letter-spacing: -0.035em;
-
-      margin-bottom: 30px;
-
-      color: #151515;
+      font-size: 3.2rem;
     }
 
     .hero-description {
-      font-family: Georgia, "Times New Roman", serif;
-
-      font-size: 1.38rem;
-      line-height: 1.55;
-
-      max-width: 720px;
-
-      color: #3d3d3d;
-
-      margin-bottom: 30px;
+      font-size: 1.2rem;
     }
-
-    .hero-detail {
-      max-width: 700px;
-
-      font-size: 1rem;
-
-      color: #555;
-    }
-
-    .hero-links {
-      display: flex;
-      flex-wrap: wrap;
-
-      gap: 22px;
-
-      margin-top: 34px;
-
-      font-size: 0.92rem;
-      font-weight: 500;
-    }
-    
-    .hero-links a {
-      color: var(--navy);
-    
-      border-bottom: 1px solid var(--gum);
-    
-      padding-bottom: 2px;
-    }
-    
-    .hero-links a:hover {
-      color: var(--gum);
-      border-color: var(--gum-dark);
-    }
-
-
-
-    /* =========================================================
-       SECTION HEADINGS
-       ========================================================= */
-
-    .section-label {
-      font-size: 0.72rem;
-
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-
-      color: #999;
-
-      margin-bottom: 13px;
-    }
-    
-    .section-title {
-      font-family: Georgia, "Times New Roman", serif;
-    
-      font-size: 2.6rem;
-      font-weight: 400;
-    
-      color: var(--navy);
-    
-      margin-bottom: 45px;
-    }
-
-
-    /* =========================================================
-       RESEARCH
-       ========================================================= */
 
     .research-item {
-      display: grid;
+      grid-template-columns: 42px 1fr;
 
-      grid-template-columns: 70px 1fr;
-
-      gap: 25px;
-
-      padding: 32px 0;
-
-      border-top: 1px solid #e4e4e0;
+      gap: 15px;
     }
-    
-    .research-item h3 {
-      font-family: Georgia, "Times New Roman", serif;
-    
-      font-size: 1.55rem;
-      font-weight: 400;
-    
-      margin-bottom: 10px;
-    
-      color: var(--ink);
-    }
-        
-    .research-number {
-      font-family: Georgia, "Times New Roman", serif;
-    
-      font-size: 1rem;
-    
-      color: var(--gum);
-    
-      padding-top: 4px;
-    }
-
-    .research-item h3 {
-      font-family: Georgia, "Times New Roman", serif;
-
-      font-size: 1.55rem;
-      font-weight: 400;
-
-      margin-bottom: 10px;
-
-      color: #202020;
-    }
-    
-    .research-meta {
-      font-size: 0.78rem;
-    
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    
-      color: var(--muted);
-    
-      margin-bottom: 14px;
-    }
-
-    .research-item p {
-      max-width: 690px;
-
-      color: #555;
-
-      margin-bottom: 0;
-    }
-
-
-    /* =========================================================
-       EXPERIENCE
-       ========================================================= */
 
     .experience-item {
-      display: grid;
+      grid-template-columns: 1fr;
 
-      grid-template-columns: 190px 1fr;
-
-      gap: 35px;
-
-      padding: 27px 0;
-
-      border-top: 1px solid #e4e4e0;
+      gap: 7px;
     }
 
-    .experience-date {
-      color: #999;
+  }
 
-      font-size: 0.86rem;
-    }
-
-    .experience-info h3 {
-      font-family: Georgia, "Times New Roman", serif;
-
-      font-size: 1.25rem;
-      font-weight: 400;
-
-      margin-bottom: 5px;
-    }
-
-    .institution {
-      color: #777;
-
-      font-size: 0.9rem;
-
-      margin-bottom: 10px;
-    }
-
-    .experience-info p {
-      color: #555;
-
-      margin-bottom: 0;
-    }
-
-
-    /* =========================================================
-       PUBLICATIONS
-       ========================================================= */
-
-    .publication {
-      padding: 25px 0;
-
-      border-top: 1px solid #e4e4e0;
-    }
-
-    .publication:last-child {
-      border-bottom: 1px solid #e4e4e0;
-    }
-
-    .publication-title {
-      font-family: Georgia, "Times New Roman", serif;
-
-      font-size: 1.18rem;
-
-      margin-bottom: 7px;
-    }
-
-    .publication-details {
-      color: #666;
-
-      font-size: 0.93rem;
-    }
-
-
-    /* =========================================================
-       FOOTER
-       ========================================================= */
-
-    footer {
-      padding: 40px 0 55px;
-
-      color: #999;
-
-      font-size: 0.82rem;
-    }
-
-
-    /* =========================================================
-       MOBILE
-       ========================================================= */
-
-    @media (max-width: 800px) {
-
-      .sidebar {
-        position: relative;
-
-        width: 100%;
-        height: auto;
-
-        padding: 35px 7% 25px;
-
-        border-right: none;
-        border-bottom: 1px solid #d8d8d4;
-      }
-
-      .headshot {
-        width: 110px;
-        height: 110px;
-
-        margin-bottom: 20px;
-      }
-
-      .sidebar-name {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 1.75rem;
-        font-weight: 500;
-  
-        color: var(--navy);
-  
-        margin-bottom: 6px;
-      }
-
-      .sidebar-title {
-        margin-bottom: 22px;
-      }
-
-      .sidebar-nav {
-        flex-direction: row;
-        flex-wrap: wrap;
-
-        gap: 10px 20px;
-
-        margin-bottom: 22px;
-      }
-
-      .sidebar-links {
-        margin-top: 0;
-      }
-
-      main {
-        margin-left: 0;
-      }
-
-      .content {
-        width: 86%;
-      }
-
-      section {
-        padding: 65px 0;
-      }
-
-      .hero {
-        min-height: auto;
-
-        padding-top: 70px;
-        padding-bottom: 70px;
-      }
-
-      .hero h1 {
-        font-family: Georgia, "Times New Roman", serif;
-      
-        font-size: clamp(3rem, 6vw, 5.4rem);
-        font-weight: 400;
-      
-        letter-spacing: -0.035em;
-      
-        margin-bottom: 30px;
-      
-        color: var(--navy);
-      }
-
-      .hero-description {
-        font-size: 1.2rem;
-      }
-
-      .research-item {
-        grid-template-columns: 42px 1fr;
-
-        gap: 15px;
-      }
-
-      .experience-item {
-        grid-template-columns: 1fr;
-
-        gap: 7px;
-      }
-
-    }
-
-        /* =========================================================
-       COLOR THEME OVERRIDES
-       ========================================================= */
-    
-    body {
-      color: var(--ink);
-      background: var(--paper);
-    }
-    
-    main {
-      background: var(--white);
-    }
-    
-    /* Sidebar */
-    .sidebar {
-      background: var(--sidebar);
-      border-right-color: var(--rule);
-    }
-    
-    .sidebar-name {
-      color: var(--navy);
-    }
-    
-    .sidebar-title {
-      color: var(--muted);
-    }
-    
-    .sidebar-nav a {
-      color: var(--ink);
-    }
-    
-    .sidebar-nav a:hover {
-      color: var(--gum);
-    }
-    
-    .sidebar-links a {
-      color: var(--muted);
-    }
-    
-    .sidebar-links a:hover {
-      color: var(--gum);
-    }
-    
-    
-    /* Hero */
-    .hero h1 {
-      color: var(--navy);
-    }
-    
-    .hero-description {
-      color: var(--text);
-    }
-    
-    .hero-detail {
-      color: var(--muted);
-    }
-    
-    .eyebrow {
-      color: var(--gold);
-    }
-    
-    .hero-links a {
-      color: var(--navy);
-      border-color: var(--gum);
-    }
-    
-    .hero-links a:hover {
-      color: var(--gum);
-      border-color: var(--gum-dark);
-    }
-    
-    
-    /* Section headings */
-    .section-label {
-      color: var(--gold);
-    }
-    
-    .section-title {
-      color: var(--navy);
-    }
-    
-    
-    /* Research */
-    .research-number {
-      color: var(--gum);
-    }
-    
-    .research-meta {
-      color: var(--muted);
-    }
-    
-    .research-item h3 {
-      color: var(--ink);
-    }
-    
-    .research-item p {
-      color: var(--text);
-    }
-    
-    
-    /* Experience */
-    .experience-date {
-      color: var(--gum);
-    }
-    
-    .experience-info h3 {
-      color: var(--ink);
-    }
-    
-    .institution {
-      color: var(--muted);
-    }
-    
-    .experience-info p {
-      color: var(--text);
-    }
-    
-    
-    /* Publications */
-    .publication-title {
-      color: var(--ink);
-    }
-    
-    .publication-details {
-      color: var(--muted);
-    }
-    
-    
-    /* Dividers */
-    section,
-    .research-item,
-    .experience-item,
-    .publication {
-      border-color: var(--rule);
-    }
-    
-    
-    /* Footer */
-    footer {
-      color: var(--muted);
-    }
-  </style>
+</style>
 </head>
 
 
