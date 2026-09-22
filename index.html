@@ -12,25 +12,58 @@
 
   <style>
 
-    /* =========================================================
-       GLOBAL
-       ========================================================= */
+    <style>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  /* =========================================================
+     COLOR PALETTE
+     ========================================================= */
+
+  :root {
+    /* Main surfaces */
+    --paper: #F7F5EE;
+    --white: #FEFDF9;
+    --sidebar: #E9E7DF;
+
+    /* Primary accent — navy leather */
+    --navy: #18324A;
+    --navy-light: #294A67;
+
+    /* Secondary accent — gum sole */
+    --gum: #A9683F;
+    --gum-dark: #875032;
+
+    /* Small warm detail — gold lettering */
+    --gold: #C89545;
+
+    /* Text */
+    --ink: #1E2428;
+    --text: #3F4548;
+    --muted: #777873;
+
+    /* Dividers */
+    --rule: #D8D5CC;
+  }
+
+
+  /* =========================================================
+     GLOBAL
+     ========================================================= */
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
     html {
       scroll-behavior: smooth;
     }
 
     body {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      color: #222;
-      background: #f7f7f5;
-      line-height: 1.65;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.65;
     }
 
     a {
@@ -39,7 +72,7 @@
     }
 
     a:hover {
-      color: #7a0019;
+      color: var(--gum);
     }
 
     h1, h2, h3 {
@@ -57,23 +90,23 @@
        ========================================================= */
 
     .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
 
-      width: 300px;
-      height: 100vh;
+    width: 300px;
+    height: 100vh;
 
-      padding: 55px 38px 40px;
+    padding: 55px 38px 40px;
 
-      background: #ececea;
-      border-right: 1px solid #d8d8d4;
+    background: var(--sidebar);
+    border-right: 1px solid var(--rule);
 
-      display: flex;
-      flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-      z-index: 100;
-    }
+    z-index: 100;
+  }
 
 
     /* ---------- Photo ---------- */
@@ -115,28 +148,27 @@
 
 
     /* ---------- Navigation ---------- */
-
-    .sidebar-nav {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-
-      margin-bottom: 35px;
-    }
-
+    
     .sidebar-nav a {
       font-size: 0.94rem;
-      color: #333;
-
+      color: var(--ink);
+    
       width: fit-content;
-
+    
       transition: color 0.15s ease;
     }
-
+    
     .sidebar-nav a:hover {
-      color: #7a0019;
+      color: var(--gum);
     }
-
+    
+    .sidebar-links a {
+      color: var(--muted);
+    }
+    
+    .sidebar-links a:hover {
+      color: var(--gum);
+    }
 
     /* ---------- Sidebar links ---------- */
 
@@ -161,10 +193,9 @@
     /* =========================================================
        MAIN CONTENT
        ========================================================= */
-
     main {
       margin-left: 300px;
-      background: #fff;
+      background: var(--white);
       min-height: 100vh;
     }
 
@@ -200,15 +231,14 @@
       max-width: 780px;
     }
 
-    .eyebrow {
+    .eyebrow,
+    .section-label {
       text-transform: uppercase;
-
+    
       font-size: 0.74rem;
       letter-spacing: 0.16em;
-
-      color: #888;
-
-      margin-bottom: 22px;
+    
+      color: var(--gold);
     }
 
     .hero h1 {
@@ -256,16 +286,20 @@
       font-size: 0.92rem;
       font-weight: 500;
     }
-
+    
     .hero-links a {
-      border-bottom: 1px solid #aaa;
-
+      color: var(--navy);
+    
+      border-bottom: 1px solid var(--gum);
+    
       padding-bottom: 2px;
     }
-
+    
     .hero-links a:hover {
-      border-color: #7a0019;
+      color: var(--gum);
+      border-color: var(--gum-dark);
     }
+
 
 
     /* =========================================================
@@ -282,15 +316,15 @@
 
       margin-bottom: 13px;
     }
-
+    
     .section-title {
       font-family: Georgia, "Times New Roman", serif;
-
+    
       font-size: 2.6rem;
       font-weight: 400;
-
-      color: #171717;
-
+    
+      color: var(--navy);
+    
       margin-bottom: 45px;
     }
 
@@ -310,18 +344,25 @@
 
       border-top: 1px solid #e4e4e0;
     }
-
-    .research-item:last-child {
-      border-bottom: 1px solid #e4e4e0;
+    
+    .research-item h3 {
+      font-family: Georgia, "Times New Roman", serif;
+    
+      font-size: 1.55rem;
+      font-weight: 400;
+    
+      margin-bottom: 10px;
+    
+      color: var(--ink);
     }
-
+        
     .research-number {
       font-family: Georgia, "Times New Roman", serif;
-
+    
       font-size: 1rem;
-
-      color: #aaa;
-
+    
+      color: var(--gum);
+    
       padding-top: 4px;
     }
 
@@ -335,15 +376,15 @@
 
       color: #202020;
     }
-
+    
     .research-meta {
       font-size: 0.78rem;
-
+    
       text-transform: uppercase;
       letter-spacing: 0.08em;
-
-      color: #999;
-
+    
+      color: var(--muted);
+    
       margin-bottom: 14px;
     }
 
@@ -470,7 +511,13 @@
       }
 
       .sidebar-name {
-        font-size: 1.5rem;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.75rem;
+        font-weight: 500;
+  
+        color: var(--navy);
+  
+        margin-bottom: 6px;
       }
 
       .sidebar-title {
@@ -510,7 +557,16 @@
       }
 
       .hero h1 {
-        font-size: 3.2rem;
+        font-family: Georgia, "Times New Roman", serif;
+      
+        font-size: clamp(3rem, 6vw, 5.4rem);
+        font-weight: 400;
+      
+        letter-spacing: -0.035em;
+      
+        margin-bottom: 30px;
+      
+        color: var(--navy);
       }
 
       .hero-description {
